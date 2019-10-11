@@ -1,0 +1,20 @@
+@startuml
+title Architecture Diagram
+
+
+component View
+component ViewModel
+component "DataSource + DataFactory" as repo
+component ApiService
+component NetworkManager
+cloud Backend
+database RoomDB
+
+ View -down-> ViewModel
+ ViewModel -down-> repo
+ repo -down-> ApiService
+ ApiService -down-> NetworkManager
+ NetworkManager -down-> Backend
+ repo -down-> RoomDB: maybe
+
+@enduml

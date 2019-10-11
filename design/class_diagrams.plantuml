@@ -1,0 +1,25 @@
+@startuml
+title Class Diagram
+class User{
+    List<Route> routes
+}
+
+class Route {
+    List<Destination> destinations
+
+}
+
+class Destination{
+    List<OrderItem> orders
+    String address
+}
+
+Class OrderItem {
+    int quantity
+}
+
+User --* Route 
+Route --* Destination
+Destination --* OrderItem
+
+@enduml
