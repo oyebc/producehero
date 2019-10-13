@@ -10,6 +10,8 @@ import java.nio.charset.StandardCharsets;
 
 public class Utils {
 
+    public static final String DATA_FILE_NAME = "dummy_user.json";
+
     public static String loadJSONFromAssetsWithFileName(Context context, String fileName) throws IOException {
 
         InputStream is = context.getAssets().open(fileName);

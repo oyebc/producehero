@@ -30,7 +30,7 @@ public class LoginDataSource {
 
     private User getDummyUser(Context context) throws IOException {
 
-        String userString = Utils.loadJSONFromAssetsWithFileName(context, "dummy_user.json");
+        String userString = Utils.loadJSONFromAssetsWithFileName(context, Utils.DATA_FILE_NAME);
         Gson gson = new Gson();
         return gson.fromJson(userString, User.class);
     }

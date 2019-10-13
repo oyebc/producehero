@@ -32,6 +32,8 @@ public class LoginViewModel extends ViewModel {
 
     public void login(Context context, String username, String password) {
         // can be launched in a separate asynchronous job
+        //TODO: make LoginViewModel an Android view model so application context can be used instead
+        //of passing context as param
         Result<User> result = loginRepository.login(context, username, password);
 
         if (result instanceof Result.Success) {
