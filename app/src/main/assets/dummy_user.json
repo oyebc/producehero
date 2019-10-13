@@ -1,0 +1,55 @@
+{
+  "userId": "dummyUserId",
+  "displayName": "Test User",
+  "routes": [
+    {
+      "routeName": "Toronto",
+      "destinations": [
+        {
+          "destinationName": "Pizza Inc",
+          "address": "100 Yonge St, Toronto",
+          "orders": []
+        },
+        {
+          "destinationName": "Boston Pizza Inc.",
+          "address": "20 Sheppard St, Toronto",
+          "orders": []
+        },
+        {
+          "destinationName": "Millestone Inc",
+          "address": "1220 Queen St, Toronto",
+          "orders": []
+        },
+        {
+          "destinationName": "Ten Ichi",
+          "address": "1020 Bloor St, Toronto",
+          "orders": []
+        },
+        {
+          "destinationName": "Jack Astors Inc.",
+          "address": "100 Yonge St, Toronto",
+          "orders": []
+        },
+        {
+          "destinationName": "Il Libreto",
+          "address": "1230 Dundas St, Toronto",
+          "orders": []
+        }
+      ]
+    },
+    {
+      "routeName": "Waterloo",
+      "destinations": [
+        {
+          "destinationName": "",
+          "address": "",
+          "orders": []
+        }
+      ]
+    },
+    {
+      "routeName": "Guelph",
+      "destinations": []
+    }
+  ]
+}

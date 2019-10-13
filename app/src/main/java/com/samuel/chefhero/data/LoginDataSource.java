@@ -1,6 +1,10 @@
 package com.samuel.chefhero.data;
 
+import android.content.Context;
+
+import com.google.gson.Gson;
 import com.samuel.chefhero.data.model.User;
+import com.samuel.chefhero.util.Utils;
 
 import java.io.IOException;
 
@@ -9,14 +13,11 @@ import java.io.IOException;
  */
 public class LoginDataSource {
 
-    public Result<User> login(String username, String password) {
+    public Result<User> login(Context context, String username, String password) {
 
         try {
-            // TODO: handle loggedInUser authentication
-            User fakeUser =
-                    new User(
-                            java.util.UUID.randomUUID().toString(),
-                            "Jane Doe");
+
+            User fakeUser = getDummyUser(context);
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
@@ -25,5 +26,12 @@ public class LoginDataSource {
 
     public void logout() {
         // TODO: revoke authentication
+    }
+
+    private User getDummyUser(Context context) throws IOException {
+
+        String userString = Utils.loadJSONFromAssetsWithFileName(context, "dummy_user.json");
+        Gson gson = new Gson();
+        return gson.fromJson(userString, User.class);
     }
 }

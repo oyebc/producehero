@@ -1,5 +1,7 @@
 package com.samuel.chefhero.data;
 
+import android.content.Context;
+
 import com.samuel.chefhero.data.model.User;
 
 /**
@@ -43,9 +45,9 @@ public class LoginRepository {
         // @see https://developer.android.com/training/articles/keystore
     }
 
-    public Result<User> login(String username, String password) {
+    public Result<User> login(Context context, String username, String password) {
         // handle login
-        Result<User> result = dataSource.login(username, password);
+        Result<User> result = dataSource.login(context, username, password);
         if (result instanceof Result.Success) {
             setLoggedInUser(((Result.Success<User>) result).getData());
         }
