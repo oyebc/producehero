@@ -1,6 +1,7 @@
 package com.samuel.chefhero.ui.route_list;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -15,6 +16,11 @@ import java.util.List;
 class RouteListAdapter extends RecyclerView.Adapter {
 
     private List<Route> routesList = new ArrayList<>();
+    private View.OnClickListener routeClicked;
+
+    public RouteListAdapter(View.OnClickListener routeClicked) {
+        this.routeClicked = routeClicked;
+    }
 
     @NonNull
     @Override
@@ -49,6 +55,7 @@ class RouteListAdapter extends RecyclerView.Adapter {
         public RouteListViewHolder(@NonNull RouteListBinding routeListBinding) {
             super(routeListBinding.getRoot());
             this.routeListBinding = routeListBinding;
+            this.routeListBinding.getRoot().setOnClickListener(routeClicked);
         }
 
         public void bindView(Route route){
