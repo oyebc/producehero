@@ -25,7 +25,7 @@ public class RoutePlanListViewModel extends AndroidViewModel  {
 
     public RoutePlanListViewModel(@NonNull Application mApplication){
         super(mApplication);
-        executor = Executors.newFixedThreadPool(5);
+        executor = Executors.newCachedThreadPool();
     }
 
     public MutableLiveData<List<Destination>> getDestinationListLiveData() {
@@ -44,13 +44,12 @@ public class RoutePlanListViewModel extends AndroidViewModel  {
         @Override
         public void run() {
             try {
-                String userText = Utils.loadJSONFromAssetsWithFileName(getApplication(), Utils.DATA_FILE_NAME);
-                Gson gson = new Gson();
-                User user = gson.fromJson(userText, User.class);
+
+                User user = Utils.getUserFromAssets(getApplication());
 
                 getDestinationListLiveData().postValue(user.getRoutes().get(0).getDestinations());
             } catch (IOException e) {
-                Log.e(RouteListViewModel.class.getName(), e.getMessage());
+                Log.e(RoutePlanListViewModel.class.getName(), e.getMessage());
             }
         }
     }

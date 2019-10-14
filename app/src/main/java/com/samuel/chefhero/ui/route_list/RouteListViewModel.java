@@ -44,9 +44,8 @@ public class RouteListViewModel extends AndroidViewModel {
         @Override
         public void run() {
             try {
-                String userText = Utils.loadJSONFromAssetsWithFileName(getApplication(), Utils.DATA_FILE_NAME);
-                Gson gson = new Gson();
-                User user = gson.fromJson(userText, User.class);
+
+                User user = Utils.getUserFromAssets(getApplication());
 
                 getRoutesListLiveData().postValue(user.getRoutes());
             } catch (IOException e) {

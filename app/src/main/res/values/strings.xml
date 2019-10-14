@@ -12,4 +12,6 @@
     <string name="producehero">ProduceHero</string>
     <string name="map">Map</string>
     <string name="signed">Signed</string>
+    <string name="title_activity_order_list">OrderListActivity</string>
+    <string name="adjust">Adjust</string>
 </resources>

@@ -17,7 +17,7 @@ public class LoginDataSource {
 
         try {
 
-            User fakeUser = getDummyUser(context);
+            User fakeUser = Utils.getUserFromAssets(context);
             return new Result.Success<>(fakeUser);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error logging in", e));
@@ -28,10 +28,4 @@ public class LoginDataSource {
         // TODO: revoke authentication
     }
 
-    private User getDummyUser(Context context) throws IOException {
-
-        String userString = Utils.loadJSONFromAssetsWithFileName(context, Utils.DATA_FILE_NAME);
-        Gson gson = new Gson();
-        return gson.fromJson(userString, User.class);
-    }
 }

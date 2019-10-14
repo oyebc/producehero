@@ -9,8 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.route_plan.RoutePlanActivity"></activity>
-        <!-- <activity android:name=".ui.route_list.RouteListActivity"></activity> -->
+        <activity
+            android:name=".ui.order_items.OrderListActivity"
+            android:label="@string/title_activity_order_list"
+            android:parentActivityName=".ui.route_plan.RoutePlanActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samuel.chefhero.ui.route_plan.RoutePlanActivity" />
+        </activity>
+        <activity android:name=".ui.route_plan.RoutePlanActivity" /> <!-- <activity android:name=".ui.route_list.RouteListActivity"></activity> -->
         <activity android:name=".ui.login.LoginActivity" />
         <activity
             android:name=".ui.route_list.RouteListActivity"
