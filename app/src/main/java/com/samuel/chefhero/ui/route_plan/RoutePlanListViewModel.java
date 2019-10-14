@@ -9,7 +9,6 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.google.gson.Gson;
 import com.samuel.chefhero.data.model.Destination;
-import com.samuel.chefhero.data.model.Route;
 import com.samuel.chefhero.data.model.User;
 import com.samuel.chefhero.ui.route_list.RouteListViewModel;
 import com.samuel.chefhero.util.Utils;
@@ -36,11 +35,11 @@ public class RoutePlanListViewModel extends AndroidViewModel  {
         return destinationListLiveData;
     }
 
-    public void fetchRoutesList(){
-        executor.execute(new FetchRoutesListTask());
+    public void fetchDestinationsInRoute(){
+        executor.execute(new FetchDestinationsListTask());
     }
 
-    private class FetchRoutesListTask implements Runnable {
+    private class FetchDestinationsListTask implements Runnable {
 
         @Override
         public void run() {

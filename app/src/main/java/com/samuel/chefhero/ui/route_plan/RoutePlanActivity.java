@@ -10,7 +10,6 @@ import android.os.Bundle;
 
 import com.samuel.chefhero.R;
 import com.samuel.chefhero.data.model.Destination;
-import com.samuel.chefhero.data.model.Route;
 import com.samuel.chefhero.databinding.RoutePlanActivityBinding;
 
 import java.util.List;
@@ -31,13 +30,14 @@ public class RoutePlanActivity extends AppCompatActivity {
 
         routePlanListViewModel.getDestinationListLiveData().observe(this, new Observer<List<Destination>>() {
             @Override
-            public void onChanged(List<Destination> routes) {
+            public void onChanged(List<Destination> destinations) {
+                adapter.refreshList(destinations);
             }
         });
 
         binding.listFeed.setLayoutManager(new LinearLayoutManager(this));
         binding.listFeed.setAdapter(adapter);
-        routePlanListViewModel.fetchRoutesList();
+        routePlanListViewModel.fetchDestinationsInRoute();
 
 //        binding.listFeed.setOnClickListener(new Click);
     }

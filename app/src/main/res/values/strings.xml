@@ -10,4 +10,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="producehero">ProduceHero</string>
+    <string name="map">Map</string>
+    <string name="signed">Signed</string>
 </resources>
