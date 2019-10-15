@@ -25,11 +25,15 @@
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textColor="@android:color/white"
-            android:background="@color/line_grey"
+            android:background="@color/darkgray"
             android:layout_alignParentStart="true"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
             android:layout_below="@id/orderName"/>
         <TextView
             android:id="@+id/number_of_items"
@@ -38,11 +42,12 @@
             android:textSize="22sp"
             android:textColor="@android:color/white"
             android:background="@color/map_green"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:layout_below="@id/orderName"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
             android:layout_toEndOf="@+id/weight"
             android:layout_toRightOf="@+id/weight"/>
         <Button
@@ -55,8 +60,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/button_margin_right"
-            android:visibility="gone"/>
+            android:layout_marginRight="@dimen/button_margin_right"/>
         <View
             android:background="@color/line_grey"
             android:layout_height="1dp"

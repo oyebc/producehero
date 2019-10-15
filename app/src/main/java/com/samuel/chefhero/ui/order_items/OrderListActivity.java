@@ -28,6 +28,7 @@ public class OrderListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_order_list);
         viewModel = ViewModelProviders.of(this).get(OrderListViewModel.class);
+        adapter = new OrderListAdapter();
         Toolbar toolbar = binding.toolbar;
         setSupportActionBar(toolbar);
 
@@ -36,7 +37,7 @@ public class OrderListActivity extends AppCompatActivity {
         viewModel.getOrderItemLiveData().observe(this, new Observer<List<OrderItem>>() {
             @Override
             public void onChanged(List<OrderItem> orderItems) {
-                adapter = new OrderListAdapter(orderItems);
+                adapter.refreshList(orderItems);
             }
         });
         binding.content.listFeed.setLayoutManager(new LinearLayoutManager(this));

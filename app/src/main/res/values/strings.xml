@@ -14,4 +14,5 @@
     <string name="signed">Signed</string>
     <string name="title_activity_order_list">OrderListActivity</string>
     <string name="adjust">Adjust</string>
+    <string name="title_activity_adjust_value">AdjustValueActivity</string>
 </resources>

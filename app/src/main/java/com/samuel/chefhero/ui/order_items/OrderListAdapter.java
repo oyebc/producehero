@@ -17,9 +17,6 @@ class OrderListAdapter extends RecyclerView.Adapter {
 
     private List<OrderItem> orderItems = new ArrayList<>();
 
-    public OrderListAdapter(List<OrderItem> orderItems){
-        this.orderItems = orderItems;
-    }
 
     @NonNull
     @Override
@@ -39,6 +36,12 @@ class OrderListAdapter extends RecyclerView.Adapter {
         return orderItems.size();
     }
 
+    public void refreshList(List<OrderItem> orderItems) {
+        this.orderItems.clear();
+        this.orderItems.addAll(orderItems);
+        notifyDataSetChanged();
+    }
+
     private class OrderItemViewHolder extends RecyclerView.ViewHolder {
 
         private final OrderItemViewBinding binding;
@@ -50,8 +53,8 @@ class OrderListAdapter extends RecyclerView.Adapter {
 
         public void bindView(final OrderItem orderItem){
             binding.orderName.setText(orderItem.getItemName());
-            binding.weight.setText(orderItem.getWeight() +" kg");
-            binding.numberOfItems.setText(orderItem.getQuantity());
+            binding.weight.setText(orderItem.getWeight() +"kg");
+            binding.numberOfItems.setText("x"+orderItem.getQuantity());
 
         }
     }

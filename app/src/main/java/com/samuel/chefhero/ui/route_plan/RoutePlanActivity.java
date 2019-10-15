@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
-import android.view.View;
 
 import com.samuel.chefhero.R;
 import com.samuel.chefhero.data.model.Destination;
