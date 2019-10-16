@@ -1,5 +1,7 @@
 package com.samuel.chefhero.ui.order_items;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.samuel.chefhero.data.model.OrderItem;
 import com.samuel.chefhero.databinding.OrderItemViewBinding;
+import com.samuel.chefhero.ui.order_items.adjustvalue.AdjustValueActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +58,14 @@ class OrderListAdapter extends RecyclerView.Adapter {
             binding.orderName.setText(orderItem.getItemName());
             binding.weight.setText(orderItem.getWeight() +"kg");
             binding.numberOfItems.setText("x"+orderItem.getQuantity());
+            binding.adjustButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = binding.adjustButton.getContext();
+                    Intent intent = new Intent(context, AdjustValueActivity.class);
+                    context.startActivity(intent);
+                }
+            });
 
         }
     }

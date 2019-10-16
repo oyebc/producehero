@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.order_items.adjustvalue.AdjustValueActivity"
+            android:label="@string/title_activity_adjust_value"
+            android:parentActivityName=".ui.order_items.OrderListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.samuel.chefhero.ui.order_items.OrderListActivity" />
+        </activity>
+        <activity
             android:name=".ui.order_items.OrderListActivity"
             android:label="@string/title_activity_order_list"
             android:parentActivityName=".ui.route_plan.RoutePlanActivity"

@@ -15,4 +15,6 @@
     <string name="title_activity_order_list">OrderListActivity</string>
     <string name="adjust">Adjust</string>
     <string name="title_activity_adjust_value">AdjustValueActivity</string>
+    <string name="delete">Delete</string>
+    <string name="quantity_picker_title">Quantity:</string>
 </resources>
