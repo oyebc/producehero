@@ -1,5 +1,6 @@
 package com.samuel.chefhero.ui.order_items;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,11 +10,15 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.samuel.chefhero.R;
 import com.samuel.chefhero.data.model.OrderItem;
 import com.samuel.chefhero.databinding.OrderListActivityBinding;
+import com.samuel.chefhero.ui.order_items.sign.SignOrderActivity;
 
 import java.util.List;
 
@@ -46,4 +51,27 @@ public class OrderListActivity extends AppCompatActivity {
         viewModel.fetchOrderItemsListTask();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_item, menu);
+        MenuItem menuItem = menu.getItem(0);
+        menuItem.setTitle(this.getString(R.string.sign));
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menu_item:
+                Intent intent = new Intent(this, SignOrderActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+    }
 }

@@ -12,9 +12,20 @@
     <string name="producehero">ProduceHero</string>
     <string name="map">Map</string>
     <string name="signed">Signed</string>
-    <string name="title_activity_order_list">OrderListActivity</string>
+    <string name="title_activity_order_list">Order</string>
     <string name="adjust">Adjust</string>
-    <string name="title_activity_adjust_value">AdjustValueActivity</string>
+    <string name="title_activity_adjust_value">Change Item</string>
     <string name="delete">Delete</string>
     <string name="quantity_picker_title">Quantity:</string>
+    <string name="save">Save</string>
+    <string name="sign">Sign</string>
+    <string name="route_list_label">Routes</string>
+    <string name="route_plan_label">Route Plan</string>
+
+    <string name="title_activity_sign_order">SignOrderActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="temp_price"><u>x \t\t\t $355.76</u></string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear</string>
 </resources>

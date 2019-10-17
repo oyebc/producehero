@@ -1,6 +1,9 @@
 package com.samuel.chefhero.ui.order_items.adjustvalue;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.NumberPicker;
 
 
@@ -48,4 +51,25 @@ public class AdjustValueActivity extends AppCompatActivity {
         valueViewModel.fetchCurrentOrderItem();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_item, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.menu_item:
+//                valueViewModel.saveOrderItem();
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
+    }
 }
